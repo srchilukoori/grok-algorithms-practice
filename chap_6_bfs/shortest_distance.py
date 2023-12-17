@@ -27,7 +27,8 @@ def short_path(start_node: str, graph: Dict[str, Any], end_node: str):
         traversed += 1
         for node in next_nodes:
             if node != end_node:
-                _queue.append(node)
+                if node not in visited_nodes:
+                    _queue.append(node)
             else:
                 return traversed
 
